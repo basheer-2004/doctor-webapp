@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <nav>
+        <ul id="title">
+            <li>Doctor's Dairy</li>
+        </ul>
+        <ul>
+            <li><a href="">Doctor</a></li>
+            <li><a href="/patient-login">Patient</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="center">
+            <div class="patient-login-div" >
+             <form action="/booking/<%= patientid%>" method="post">
+                <select name="day" >
+                    <% day.forEach(d => {%>
+                        <option value="<%= d%>"><%= d%></option>
+                    <%});%>
+                </select>
+                <select name="time">
+                 <% time.forEach(t => {%>
+                    <option value="<%= t%>"><%= t%></option>            
+                 <%});%>
+                </select>
+                <input type="hidden" name="doctorid" value="<%= doctorid%>" >
+                <input type="submit" value="Book">
+             </form>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

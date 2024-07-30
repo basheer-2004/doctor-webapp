@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <nav>
+        <ul id="title">
+            <li>Doctor's Dairy</li>
+        </ul>
+        <ul>
+            <li><a href="">Doctor</a></li>
+            <li><a href="/patient-login">Patient</a></li>
+        </ul>
+    </nav>
+    <main>
+      <div class="center">
+        <div class="patient-details">
+            <h2>PatientID : <span><%= names%><%= id%></span></h2>
+            <p>Patient Name: <span><%= names%></span></p>
+            <p>D.O.B : <span><%= dob%></span></p>
+            <p>Gender : <span><%= gender%></span></p>
+            <p>Blood Group : <span><%= bgrp%></span></p>
+            <p>Email : <span><%= email%></span></p>
+            <p>Address : <span><%= address%></span></p>
+            <p>Mobileno. : <span><%= mobile%></span></p>
+            <a href="/update/<%= id%>">Update Details</a>
+            <a href="/list-doctors/<%= id%>">List of Doctors</a>
+        </div>
+      </div> 
+    </main>
+</body>
+</html>

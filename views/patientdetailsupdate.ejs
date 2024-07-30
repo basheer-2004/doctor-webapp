@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <nav>
+        <ul id="title">
+            <li>Doctor's Dairy</li>
+        </ul>
+        <ul>
+            <li><a href="">Doctor</a></li>
+            <li><a href="/patient-login">Patient</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="center">
+            <div class="patient-login-div" id="update-details">
+                <h2>PatientID :<%= names%><%= id%></h2>
+                <form action="/update/<%= id%>" method="post" class="flx-column">
+                    <input type="text" name="email"  value="<%= email%>">
+                    <input type="text" name="mobile" value="<%= mobile%>">
+                    <input type="text" name="address"  value="<%= add%>">
+                    <input type="submit" value="Update">
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

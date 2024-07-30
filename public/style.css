@@ -1,0 +1,148 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+nav ul li{
+  list-style: none;
+  color:#000;
+}
+nav{
+    background-color: aqua;
+    padding: 10px;
+}
+nav ul{
+    display: flex;
+    gap:10px;
+    justify-content: flex-end;
+}
+nav ul li a{
+    text-decoration: none;
+    color: #000;
+    padding: 15px;
+}
+nav ul li a:hover{
+    color:red;
+}
+
+#title{
+ display: flex;
+ justify-content: flex-start;
+ width:100px;
+ height: 10px;
+}
+.patient img{
+    height:250px;
+    width:400px;
+}
+.center{
+    display: flex;
+    height:100vh;
+    gap:30px;
+    justify-content: center;
+    align-items: center;
+}
+.patient{
+    width: 400px;
+    box-shadow: 2px 2px 5px #000;
+    padding:10px;
+    border-radius: 5px;
+}
+.patient h3{
+    text-align: center;
+}
+.patient div{
+    display: flex;
+    justify-content: center;
+}
+.patient div a{
+    text-decoration: none;
+    color:#fff;
+    background-color: green;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+#doctor-btn{
+    margin-bottom: 20px;
+}
+#patient-login-bg{
+    background-image: url(./08e557f020f4f87449c5117ec57aa8c2.jpg);
+    background-repeat: no-repeat;
+    background-size: 1300px 650px;
+}
+.flx-column{
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+}
+.patient-login-div{
+    border: 2px solid ;
+    padding: 10px;
+    border-radius: 5px;
+}
+.patient-login-div input{
+    padding:7px 10px;
+    border: none;
+    border-radius: 5px;
+    width:250px;
+}
+.center .patient-details{
+    padding:10px;
+    border-radius: 5px;
+    border:2px solid;
+}
+.patient-details h2{
+    text-align: center;
+    margin-bottom: 20px;
+}
+.patient-details p{
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+.patient-details span{
+    color : rgb(0,0,255);
+}
+#update-details {
+ background-color: cadetblue;
+}
+.patient-details a{
+    text-decoration: none;
+    padding:10px;
+    border-radius: 5px;
+    background-color: green;
+    color: #fff;
+    margin-bottom: 20px;
+}
+.list-of-doctors{
+    display: grid;
+    grid-template-columns: repeat(3,200px);
+    background-color: palegoldenrod;
+    gap:10px;
+    border-radius: 5px;
+    padding: 10px;
+}
+.list-of-doctors div{
+    padding:10px;
+    background-color: #fff;
+}
+.list-of-doctors div p{
+    text-align: center;
+}
+.list-of-doctors .heading-of-table{
+    background-color: #000;
+}
+.heading-of-table p{
+    color:#fff;
+}
+#book-appointment-a{
+    text-decoration: none;
+    padding:10px;
+    border-radius: 5px;
+    background-color: green;
+    color: #fff;
+}
+.flx{
+    display: flex;
+    justify-content: center;
+}

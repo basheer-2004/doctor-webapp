@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <nav>
+        <ul id="title">
+            <li>Doctor's Dairy</li>
+        </ul>
+        <ul>
+            <li><a href="">Doctor</a></li>
+            <li><a href="/patient-login">Patient</a></li>
+        </ul>
+    </nav>
+    <main id="patient-login-bg">
+        <div class="center">
+            <div class="patient-login-div">
+                <h2>Patient Login</h2>
+                <form action="/submit" method="post" class="flx-column">
+                    <input type="text" placeholder="Username" name="uname" required>
+                    <% if(locals.user){ %>
+                    <p style="color: red;"><%= user%></p>
+                    <%}%>
+                    <input type="password" placeholder="Password" name="pwd" required>
+                    <% if(locals.wrong){ %>
+                        <p style="color: red;"><%= wrong%></p>
+                    <%}%>
+                    <input type="submit" value="Login">
+                </form>
+                <p>Not a User?<a href="/patient-register">Register</a></p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

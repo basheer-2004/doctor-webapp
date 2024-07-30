@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <nav>
+        <ul id="title">
+            <li>Doctor's Dairy</li>
+        </ul>
+        <ul>
+            <li><a href="">Doctor</a></li>
+            <li><a href="/patient-login">Patient</a></li>
+        </ul>
+    </nav>
+    <main>
+      <div class="center">
+        <div class="flx-column">
+        <div class="list-of-doctors">
+            <div class="heading-of-table"><p>Name of doctor</p></div>
+            <div class="heading-of-table"><p>Departnment</p></div>
+            <div class="heading-of-table"><p>Consultant fee</p></div>
+            <% if(locals.doctors){%>
+              <% doctors.forEach(doctor => {%>
+                <div><p><%= doctor.name%></p></div>
+                <div><p><%= doctor.depart%></p></div>
+                <div><p><%= doctor.fee%></p></div>
+              <%});%>
+            <%}%>
+        </div>
+        <div class="flx"><a href="/book/<%= patientid%>" id="book-appointment-a">Book Appointment</a></div>
+        </div>
+      </div>
+    </main>
+</body>
+</html>

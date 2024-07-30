@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <nav>
+        <ul id="title">
+            <li>Doctor's Dairy</li>
+        </ul>
+        <ul>
+            <li><a href="">Doctor</a></li>
+            <li><a href="/patient-login">Patient</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="center">
+            <div class="patient-login-div" >
+             <form action="/book/<%= patientid%>" method="post">
+                <select name="departnment">
+                    <% doctors.forEach(doctor => { %>
+                        <option value="<%= doctor%>"><%= doctor%></option>
+                    <% });%>
+                </select>
+                <select name="doctorid" >
+                    <% for(var i=0;i<names.length;i++){%>
+                     <option value="<%= ids[i]%>"><%= names[i]%></option>
+                    <%}%>
+                </select>
+                <select name="fees">
+                    <% fees.forEach(fee => { %>
+                        <option value="<%= fee%>"><%= fee%></option>
+                    <%});%>
+                </select>
+                <input type="submit" value="Book">
+             </form>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
