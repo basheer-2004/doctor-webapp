@@ -1,0 +1,49 @@
+CREATE TABLE IF NOT EXISTS public.book
+(
+    book_id integer NOT NULL DEFAULT nextval('book_book_id_seq'::regclass),
+    patient_id integer,
+    doctor_id integer,
+    day text COLLATE pg_catalog."default",
+    "time" text COLLATE pg_catalog."default",
+    CONSTRAINT book_pkey PRIMARY KEY (book_id)
+)
+
+
+CREATE TABLE IF NOT EXISTS public.listdoctors
+(
+    id integer NOT NULL DEFAULT nextval('listdoctors_id_seq'::regclass),
+    name text COLLATE pg_catalog."default" NOT NULL,
+    depart text COLLATE pg_catalog."default" NOT NULL,
+    fee integer NOT NULL,
+    CONSTRAINT listdoctors_pkey PRIMARY KEY (id)
+)
+
+
+CREATE TABLE IF NOT EXISTS public.patient
+(
+    id integer NOT NULL DEFAULT nextval('patient_id_seq'::regclass),
+    pname text COLLATE pg_catalog."default",
+    dob date,
+    gender character varying(1) COLLATE pg_catalog."default",
+    bgrp character varying(4) COLLATE pg_catalog."default",
+    email text COLLATE pg_catalog."default",
+    address text COLLATE pg_catalog."default",
+    mobile text COLLATE pg_catalog."default",
+    password text COLLATE pg_catalog."default",
+    CONSTRAINT patient_pkey PRIMARY KEY (id),
+    CONSTRAINT patient_pname_key UNIQUE (pname)
+)
+
+
+CREATE TABLE IF NOT EXISTS public.timings
+(
+    id integer NOT NULL DEFAULT nextval('timings_id_seq'::regclass),
+    day text COLLATE pg_catalog."default" NOT NULL,
+    "time" text COLLATE pg_catalog."default",
+    doctor_id integer,
+    CONSTRAINT timings_pkey PRIMARY KEY (id),
+    CONSTRAINT timings_doctor_id_fkey FOREIGN KEY (doctor_id)
+        REFERENCES public.listdoctors (id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
